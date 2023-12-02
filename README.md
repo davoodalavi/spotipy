@@ -10,17 +10,19 @@ Spotipy's full documentation is online at [Spotipy Documentation](http://spotipy
 
 ## Installation
 
+A full tutorial on how to set up and use Spotipy can be found [here](https://github.com/davoodalavi/spotipy/blob/master/TUTORIAL.md)
+
 ```bash
 pip install spotipy
 ```
 
-alternatively, for Windows users 
+alternatively, for Windows users not using bash
 
 ```bash
 py -m pip install spotipy
 ```
 
-or upgrade
+if you have installed and need to upgrade
 
 ```bash
 pip install spotipy --upgrade
@@ -31,21 +33,24 @@ pip install spotipy --upgrade
 A full set of examples can be found in the [online documentation](http://spotipy.readthedocs.org/) and in the [Spotipy examples directory](https://github.com/plamere/spotipy/tree/master/examples).
 
 To get started, install spotipy and create an app on https://developers.spotify.com/.
+
+  1. Select "Login" from the top right-hand corner
+  ![image](https://github.com/davoodalavi/spotipy/assets/22606346/de634730-eab2-46d4-ad74-2fe8e87ddf8f)
+   
+  
+  2. Click on your account in the top right-hand corner and navigate to dashboard.
+  ![image](https://github.com/davoodalavi/spotipy/assets/22606346/57b597c3-5fc3-4c3d-8395-bd26b3d58ac3)
+
+  3. Create a new App.
+  ![image](https://github.com/davoodalavi/spotipy/assets/22606346/4d854259-0931-4a91-b616-3d963629d699)
+
+  4. For redirect URI set it to localhost:3000 or some other port.
+  ![image](https://github.com/davoodalavi/spotipy/assets/22606346/9015bd6d-fd47-4004-8a9e-60a30a8da874)
+
+
 Add your new ID and SECRET to your environment:
 
-### Without user authentication
-
-```python
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
-
-sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="YOUR_APP_CLIENT_ID",
-                                                           client_secret="YOUR_APP_CLIENT_SECRET"))
-
-results = sp.search(q='weezer', limit=20)
-for idx, track in enumerate(results['tracks']['items']):
-    print(idx, track['name'])
-```
+This can be found by navigating to the settings of your app.
 
 ### With user authentication
 
